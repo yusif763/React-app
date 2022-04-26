@@ -3,6 +3,7 @@ import Contacts from './components/Contacts';
 import User from './components/Users/User';
 import InputExample from './components/InputExample';
 import UserInformation from './components/Users/UserInformation';
+import TextContext from './context/TextContext';
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,7 +13,11 @@ import {
 
 function App() {
     return (
+      <>
+      
+
       <Router>
+      <TextContext.Provider value="Hello">
         <div>
           <nav>
             <ul>
@@ -46,7 +51,11 @@ function App() {
             </Route>
           </Routes>
         </div>
+      </TextContext.Provider>
+
       </Router>
+
+      </>
     );
 }
 

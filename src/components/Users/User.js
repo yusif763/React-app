@@ -1,11 +1,14 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState,useContext} from 'react'
 import style from './styles.module.css'
 import axios from 'axios'
-import {useNavigate,Route,Routes,useMatch} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 
 
 function User() {
+    // const data = useContext(TextContext);
+    // console.log(data,'user.js' , number++)
+    // console.log("daad")
     const navigate = useNavigate()
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);

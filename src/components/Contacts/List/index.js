@@ -2,7 +2,7 @@ import {useState} from 'react'
 import React from 'react';
 import style from './styles.module.css'
 function List({contacts}) {
-    console.log("rendered list")
+    // console.log("rendered list")
     const [filterText,setFilterText] = useState('');
     
     function changeFilterText(e){

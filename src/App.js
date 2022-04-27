@@ -1,58 +1,25 @@
 import './App.css';
-import Contacts from './components/Contacts';
-import User from './components/Users/User';
-import InputExample from './components/InputExample';
-import UserInformation from './components/Users/UserInformation';
-import TextContext from './context/TextContext';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
+import { TextProvider } from './context/TextContext';
+import { UserProvider } from './context/UserContext';
+import Main from './components/Main/Main';
+
 
 function App() {
+  
     return (
       <>
       
 
       <Router>
-      <TextContext.Provider value="Hello">
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/contacts">Contacts</Link>
-              </li>
-              <li>
-                <Link to="/users">Users</Link>
-              </li>
-           
-            </ul>
-          </nav>
-  
-          {/* A <Routes> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
-          <Routes>
-            <Route path="/contacts" element={<Contacts />}>
-              {/* <contacts /> */}
-            </Route>
-            <Route path="/users" element={<User />}>
-              {/* <Users /> */}
-            </Route>
-            <Route path="/" element={<InputExample />}>
-              {/* <Home /> */}
-            </Route>
-            <Route path="/user/:id" element={<UserInformation />}>
-              {/* <Home /> */}
-            </Route>
-          </Routes>
-        </div>
-      </TextContext.Provider>
+      <TextProvider>
+      <UserProvider>
+        <Main>
+        </Main>
+</UserProvider>
+      </TextProvider>
 
+      
       </Router>
 
       </>

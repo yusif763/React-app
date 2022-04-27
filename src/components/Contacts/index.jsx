@@ -3,14 +3,14 @@ import List from './List';
 import Form from './Form';
 import './styles.css'
 import {useState, useEffect,useContext} from 'react';
-import TextContext from "../../context/TextContext";
+// import TextContext from "../../context/TextContext";
 
 
 
 function Contacts() {
 
-  const data = useContext(TextContext);
-  console.log(data)
+  // const data = useContext(TextContext);
+  // console.log(data)
   const [contacts, setContacts] = useState([
     {fullname:"Yusif", phoneNumber:"123456789"},
     {fullname:"Huseyn", phoneNumber:"4444444444"},

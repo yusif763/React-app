@@ -1,7 +1,17 @@
 .App {
   text-align: center;
 }
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.dark {
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

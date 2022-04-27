@@ -4,13 +4,13 @@ import {useParams} from 'react-router-dom'
 
 
 function UserInformation() {
-    const [user,setUser] = useState({})
+    const [userInformation,setUserInformation] = useState({})
     const [isLoading,setIsLoading] = useState(true)
     const {id} = useParams();
     useEffect(() => {
         axios(`https://jsonplaceholder.typicode.com/users/${id}`)
         .then((res)=>{
-              setUser({...res.data});
+              setUserInformation({...res.data});
         }).catch((err) => {console.log(err)})
         .finally(() => {
             setIsLoading(false);
@@ -21,10 +21,10 @@ function UserInformation() {
       <>
         <div>UserInformation</div>
         {isLoading ? <div>Loading...</div> : ''}
-        <div>{user.name}</div>
-        <div>{user.email}</div>
-        <div>{user.phone}</div>
-        <div>{user.username}</div>
+        <div>{userInformation.name}</div>
+        <div>{userInformation.email}</div>
+        <div>{userInformation.phone}</div>
+        <div>{userInformation.username}</div>
 
       </>
     
